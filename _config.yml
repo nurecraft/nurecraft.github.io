@@ -1,0 +1,28 @@
+# Site settings
+title: NURECRAFT
+url: https://nurecraft.ml
+description: "Minecraft server of NURE"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#000000'
+  links: '#219ab3'
+
+# Footer settings
+footer: NURECRAFT
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: Telegram Канал
+    icon: telegram
+    url: https://t.me/nure_minecraft
+  - title: Telegram чат
+    icon: comments
+    url: https://t.me/nure_minecraft_chat
+  - title: GitHub
+    icon: github
+    url: https://github.com/nurecraft
+
+# Build settings
+markdown: kramdown
+permalink: pretty

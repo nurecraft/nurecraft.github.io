@@ -22,6 +22,9 @@ social:
   - title: GitHub
     icon: github
     url: https://github.com/nurecraft
+  - title: Карта сервера
+    icon: map
+    url: https://map.nurecraft.ml/
 
 # Build settings
 markdown: kramdown

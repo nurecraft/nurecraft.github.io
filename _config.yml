@@ -1,7 +1,7 @@
 # Site settings
 title: NURECRAFT
 url: https://nurecraft.ml
-description: "Minecraft server of NURE"
+description: "Minecraft сервер від студентів ХНУРЕ"
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
@@ -13,7 +13,7 @@ footer: NURECRAFT
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: Telegram Канал
+  - title: Telegram канал
     icon: telegram
     url: https://t.me/nure_minecraft
   - title: Telegram чат
@@ -22,7 +22,7 @@ social:
   - title: GitHub
     icon: github
     url: https://github.com/nurecraft
-  - title: Карта сервера
+  - title: Мапа серверу
     icon: map
     url: https://map.nurecraft.ml/
 

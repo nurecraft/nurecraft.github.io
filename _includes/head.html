@@ -20,32 +20,28 @@
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <script src="https://mcapi.us/scripts/minecraft.js"></script>
     <script>
-      MinecraftAPI.getServerStatus('vanilla.nurecraft.ml', {
-        port: 25565 // optional, only if you need a custom port
-      }, function (err, status) {
+    function getServerStatus(server_name) {
+        MinecraftAPI.getServerStatus(server_name + '.nurecraft.ml', {
+            port: 25565 // optional, only if you need a custom port
+        }, function (err, status) {
         if (err) {
-          return
+            return
         }
 
         // you can change these to your own message!
-        document.querySelector('.vanilla-status').classList.add(status.online ? 'glyphicon glyphicon-ok' : 'glyphicon-remove');
-        document.querySelector('.vanilla-status').classList.add(status.online ? 'btn btn-success': 'btn btn-danger');
-        document.querySelector('.vanilla-online').innerHTML = status.players.now;
-        document.querySelector('.vanilla-max').innerHTML = status.players.max;
-      });
-      MinecraftAPI.getServerStatus('anarchy.nurecraft.ml', {
-        port: 25565 // optional, only if you need a custom port
-      }, function (err, status) {
-        if (err) {
-          return
+        if (status.online) {
+            document.querySelector('.' + server_name + '-status').classList.add('glyphicon','glyphicon-ok','btn','btn-success');
+        } else {
+        	document.querySelector('.' + server_name + '-status').classList.add('glyphicon', 'glyphicon-remove','btn', 'btn-danger');
         }
+        document.querySelector('.' + server_name + '-online').innerHTML = status.players.now;
+        document.querySelector('.' + server_name + '-max').innerHTML = status.players.max ? status.players.max : 20;
+        });
 
-        // you can change these to your own message!
-        document.querySelector('.anarchy-status').classList.add(status.online ? 'glyphicon glyphicon-ok' : 'glyphicon-remove');
-        document.querySelector('.anarchy-status').classList.add(status.online ? 'btn btn-success': 'btn btn-danger');
-        document.querySelector('.anarchy-online').innerHTML = status.players.now;
-        document.querySelector('.anarchy-max').innerHTML = status.players.max;
-      });
+    }
+
+    getServerStatus('vanilla')
+    getServerStatus('anarchy')
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -23,6 +23,24 @@
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <script src="https://mcapi.us/scripts/minecraft.js"></script>
     <script>
+    // Check if a new cache is available on page load.
+    window.addEventListener('load', function(e) {
+
+      window.applicationCache.addEventListener('updateready', function(e) {
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+          // Browser downloaded a new app cache.
+          // Swap it in and reload the page to get the new hotness.
+          window.applicationCache.swapCache();
+          if (confirm('A new version of this site is available. Load it?')) {
+            window.location.reload();
+          }
+        } else {
+          // Manifest didn't changed. Nothing new to server.
+        }
+      }, false);
+
+    }, false);
+
     function getServerStatus(server_name) {
         MinecraftAPI.getServerStatus(server_name + '.nurecraft.ml', {
             port: 25565 // optional, only if you need a custom port
@@ -43,8 +61,8 @@
 
     }
 
-    getServerStatus('vanilla')
-    getServerStatus('anarchy')
+    setInterval(getServerStatus('vanilla'), 240000);
+    setInterval(getServerStatus('anarchy'), 240000);
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

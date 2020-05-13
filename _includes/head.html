@@ -30,9 +30,9 @@
 
         // you can change these to your own message!
         if (status.online) {
-            document.querySelector('.' + server_name + '-status').classList.add('glyphicon','glyphicon-ok','btn','btn-success');
+            document.querySelector('.' + server_name + '-status').classList.add('alert', 'alert-success');
         } else {
-        	document.querySelector('.' + server_name + '-status').classList.add('glyphicon', 'glyphicon-remove','btn', 'btn-danger');
+        	document.querySelector('.' + server_name + '-status').classList.add('alert', 'alert-danger');
         }
         document.querySelector('.' + server_name + '-online').innerHTML = status.players.now;
         document.querySelector('.' + server_name + '-max').innerHTML = status.players.max ? status.players.max : 20;

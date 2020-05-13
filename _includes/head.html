@@ -18,7 +18,35 @@
     <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script src="https://mcapi.us/scripts/minecraft.js"></script>
+    <script>
+      MinecraftAPI.getServerStatus('vanilla.nurecraft.ml', {
+        port: 25565 // optional, only if you need a custom port
+      }, function (err, status) {
+        if (err) {
+          return
+        }
 
+        // you can change these to your own message!
+        document.querySelector('.vanilla-status').classList.add(status.online ? 'glyphicon glyphicon-ok' : 'glyphicon-remove');
+        document.querySelector('.vanilla-status').classList.add(status.online ? 'btn btn-success': 'btn btn-danger');
+        document.querySelector('.vanilla-online').innerHTML = status.players.now;
+        document.querySelector('.vanilla-max').innerHTML = status.players.max;
+      });
+      MinecraftAPI.getServerStatus('anarchy.nurecraft.ml', {
+        port: 25565 // optional, only if you need a custom port
+      }, function (err, status) {
+        if (err) {
+          return
+        }
+
+        // you can change these to your own message!
+        document.querySelector('.anarchy-status').classList.add(status.online ? 'glyphicon glyphicon-ok' : 'glyphicon-remove');
+        document.querySelector('.anarchy-status').classList.add(status.online ? 'btn btn-success': 'btn btn-danger');
+        document.querySelector('.anarchy-online').innerHTML = status.players.now;
+        document.querySelector('.anarchy-max').innerHTML = status.players.max;
+      });
+    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

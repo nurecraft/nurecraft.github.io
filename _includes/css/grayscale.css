@@ -369,13 +369,13 @@ body {
 #vanilla-players {
     display: none;
 }
-.vanilla-status:hover + #vanilla-players {
+#vanilla-container:hover + #vanilla-players {
     display: block; 
 }
 
 #anarchy-players {
     display: none;
 }
-.anarchy-status:hover + #anarchy-players {
+#anarchy-container:hover + #anarchy-players {
     display: block; 
 }

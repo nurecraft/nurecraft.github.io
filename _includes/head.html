@@ -58,7 +58,7 @@
         document.querySelector('.' + server_name + '-online').innerHTML = status.players.now;
         document.querySelector('.' + server_name + '-max').innerHTML = status.players.max ? status.players.max : 20;
             
-        document.querySelector('#' + server_name + '-players').innerHTML = status.players.list.length >= 1 ? 'Гравці на сервері: ' + status.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
+        document.querySelector('#' + server_name + '-players').innerHTML = status.players.list ? 'Гравці на сервері: ' + status.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
         });
     }
 

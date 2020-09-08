@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
     <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <script src="https://mcapi.us/scripts/minecraft.js"></script>
     <script>
     // Check if a new cache is available on page load.
     window.addEventListener('load', function(e) {
@@ -41,28 +40,19 @@
 
     }, false);
 
-    function getServerStatus(server_name) {
-        MinecraftAPI.getServerQuery(server_name + '.nurecraft.ml', {
-            port: 25565 // optional, only if you need a custom port
-        }, function (err, status) {
-        if (err) {
-            return
-        }
-
-        // you can change these to your own message!
-        if (status.online) {
-            document.querySelector('.' + server_name + '-status').classList.add('alert', 'alert-success');
-        } else {
-        	document.querySelector('.' + server_name + '-status').classList.add('alert', 'alert-danger');
-        }
-        document.querySelector('.' + server_name + '-online').innerHTML = status.players.now;
-        document.querySelector('.' + server_name + '-max').innerHTML = status.players.max ? status.players.max : 20;
-            
-        document.querySelector('#' + server_name + '-players').innerHTML = status.players.list ? 'Гравці на сервері: ' + status.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
-        });
+	function getServerStatus(serverName) {
+        fetch("https://api.mcsrvstat.us/2/" + serverName + ".nurecraft.ml")
+        .then((resp) => resp.json())
+  			.then((data) => {
+          document.querySelector(`.${serverName}-status`).classList.add('alert', data.online ? 'alert-success' : 'alert-danger';)
+          document.querySelector(`.${serverName}-online`).innerHTML = data.players.online | "--";
+          document.querySelector(`.${serverName}-max`).innerHTML = data.players.max | "--";
+          document.querySelector(`#${serverName}-players`).innerHTML = data.players.list ? 'Гравці на сервері: ' + data.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
+          })
+         .catch((error) => console.log(error))
     }
 
-    setInterval(getServerStatus('vanilla'), 240000);
+	setInterval(getServerStatus("vanilla"), 240000);
 //     setInterval(getServerStatus('anarchy'), 240000);
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

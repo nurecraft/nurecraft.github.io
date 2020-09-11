@@ -19,12 +19,19 @@ social:
   - title: Telegram чат
     icon: comments
     url: https://t.me/nure_minecraft_chat
-  - title: GitHub
-    icon: github
-    url: https://github.com/nurecraft
-   - title: Мапа серверу
-     icon: map
-     url: https://map.nurecraft.ml/
+  - title: Telegram бот
+    icon: plug
+    url: https://t.me/nurecraft_bot
+  - title: Пропозиції/побажання
+    icon: bug
+    url: https://github.com/nurecraft/vanilla-server/issues
+  - title: Мапа серверу
+    icon: map
+    url: https://map.nurecraft.ml/
+  - title: Вікі
+    icon: wikipedia-w
+    url: https://github.com/nurecraft/vanilla-server/wiki
+
 
 # Build settings
 markdown: kramdown

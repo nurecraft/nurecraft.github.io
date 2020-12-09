@@ -40,19 +40,19 @@
 
     }, false);
 
-    function getServerStatus(serverName) {
-        fetch("https://api.mcsrvstat.us/2/" + serverName + ".nurecraft.ml")
-        .then((resp) => resp.json()).then((data) => {
-          document.querySelector(`.${serverName}-status`).classList.add('alert', data.online ? 'alert-success' : 'alert-danger')
-          document.querySelector(`.${serverName}-online`).innerHTML = data.players.online | "--";
-          document.querySelector(`.${serverName}-max`).innerHTML = data.players.max | "--";
-          document.querySelector(`#${serverName}-players`).innerHTML = data.players.list ? 'Гравці на сервері: ' + data.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
-          })
-       .catch((error) => console.log(error))
-    }
+//     function getServerStatus(serverName) {
+//         fetch("https://api.mcsrvstat.us/2/" + serverName + ".nurecraft.ml")
+//         .then((resp) => resp.json()).then((data) => {
+//           document.querySelector(`.${serverName}-status`).classList.add('alert', data.online ? 'alert-success' : 'alert-danger')
+//           document.querySelector(`.${serverName}-online`).innerHTML = data.players.online | "--";
+//           document.querySelector(`.${serverName}-max`).innerHTML = data.players.max | "--";
+//           document.querySelector(`#${serverName}-players`).innerHTML = data.players.list ? 'Гравці на сервері: ' + data.players.list.join(', ') : "На сервері нікого.. Будь першим, приєднуйся!" ;
+//           })
+//        .catch((error) => console.log(error))
+//     }
 
-    setInterval(getServerStatus("vanilla"), 240000);
-    setInterval(getServerStatus("anarchy"), 240000);
+//     setInterval(getServerStatus("vanilla"), 240000);
+//     setInterval(getServerStatus("anarchy"), 240000);
     </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -4,34 +4,41 @@
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 <!-- <h2>Сервер було закрито!</h2>
                 <p>Адміністрація проекту дякує всім хто долучився до гри та повідомляє що проект було закрито. Сервери більше не доступні для гри.</p> -->
+
                 <p>Для того щоб почати грати на NURECRAFT потрібно:</p>
-                <p><b>1.</b> <br />
-                    <i>(MagicTech)</i> Завантажити <a href="https://github.com/nurecraft/nurecraft.github.io/raw/master/launchers/NureCraft.exe">спеціальний лаунчер Minecraft</a>;<br />
-                    <i>(Vanilla)</i> Завантажити офіційний лаучер або скористатись TLauncher</a>;<br />
+                <p><b>1. Завантажити лаунчер:</b> <br />
+                    <i>(Vanilla)</i> офіційний лаунчер або скористатись TLauncher;<br />
+                    <i>(MagicTech)</i> спеціальний лаунчер Minecraft - <a href="https://github.com/nurecraft/nurecraft.github.io/raw/master/launchers/NureCraft.exe">Windows</a> або Mac/Linux (в розробці);<br />
                 </p>
-                <p><b>2.</b> Запустити лаучер та завантажити кліент;</p>
+                <p><b>2. Запустити лаучер та завантажити кліент:</b> <br />
+                    <i>(Vanilla)</i> версії <b>1.18.1</b>;<br />
+                    <i>(MagicTech)</i> для MagicTech в меню лаунчера;<br />
+                </p>
                 <p><b>3.</b> В меню "Гра у мережі" приэднатись на сервер за адресою:</p>
-                <p id="magictech-container">
+
+                <p id="magictech-container server-container">
                     <img src="/img/logo.png" alt="MagicTech" height="15%" width="15%">
-                    <span class="magictech-status">
-                        <span class="magictech-online">-</span>/<span class="magictech-max">-</span>
-                    </span> - <code>magictech.nurecraft.ml</code> (1.12.2);
+                    <span class="magictech-status alert alert-secondary">
+                        <span class="magictech-online">🔄</span>/<span class="magictech-max">🔄</span>
+                    </span> <code>magictech.nurecraft.ml</code>;
                 </p>
-                <p id="magictech-players"></p>
-                <p id="vanilla-container">
+                <p id="magictech-players server-players"></p>
+
+                <p id="vanilla-container server-container">
                     <img src="/img/vanilla-icon.png" alt="vanilla" height="15%" width="15%">
-                    <span class="vanilla-status">
-                        <span class="vanilla-online">-</span>/<span class="vanilla-max">-</span>
-                    </span> - <code>vanilla.nurecraft.ml</code> (1.18.1);
+                    <span class="vanilla-status alert alert-secondary">
+                        <span class="vanilla-online">🔄</span>/<span class="vanilla-max">🔄</span>
+                    </span> <code>vanilla.nurecraft.ml</code>;
                 </p>
-                <p id="vanilla-players"></p>
-                <!-- <p id="anarchy-container">
+                <p id="vanilla-players server-players"></p>
+
+                <!-- <p id="anarchy-container server-container">
                     <img src="/img/anarchy-icon.png" alt="Anarchy" height="15%" width="15%">
-                    <span class="anarchy-status">
+                    <span class="anarchy-status alert alert-secondary">
                         <span class="anarchy-online">-</span>/<span class="anarchy-max">-</span>
                     </span> - <code>anarchy.nurecraft.ml</code>;
                 </p>
-                <p id="anarchy-players"></p>  -->
+                <p id="anarchy-players server-players"></p>  -->
                 <p><b>4.</b><br />
                     <i>(Vanilla)</i> Зареєструйтесь на сервері за допомогою нашого Telegram боту: <a href="https://t.me/nurecraft_bot?start=register" target="_blank" class="btn btn-default btn-lg" ><i class="fa fa-plug fa-fw"></i>@nurecraft_bot</a>;<br />
                     <i>(MagiTech)</i> Зайдіть на сервер та зареєструйтесь командою: <code>/register password password</code>;</p>

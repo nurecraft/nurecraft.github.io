@@ -366,23 +366,10 @@ body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
 
-#vanilla-players {
+#server-players {
     display: none;
 }
-#vanilla-container:hover + #vanilla-players {
+#server-container:hover + #server-players {
     display: block;
 }
 
-#magictech-players {
-    display: none;
-}
-#magictech-container:hover + #vanilla-players {
-    display: block;
-}
-
-#anarchy-players {
-    display: none;
-}
-#anarchy-container:hover + #anarchy-players {
-    display: block;
-}

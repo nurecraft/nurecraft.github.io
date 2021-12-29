@@ -44,7 +44,7 @@
         fetch(`https://api.mcsrvstat.us/2/${serverName}.nurecraft.ml`)
         .then((resp) => resp.json()).then((data) => {
           document.querySelector(`.${serverName}-status`).classList.replace(
-            'alert-secondary', data.online ? 'alert-success' : 'alert-danger'
+            'alert-warning', data.online ? 'alert-success' : 'alert-danger'
           )
           document.querySelector(`.${serverName}-online`).innerHTML = data.players.online | "-";
           document.querySelector(`.${serverName}-max`).innerHTML = data.players.max | "-";

@@ -29,8 +29,8 @@ social:
   #   icon: map
   #    url: https://map.nurecraft.ml/
   - title: Discord серверу
-    icon: newspaper
-     url: https://discord.gg/xXKhnyR
+    icon: discord
+    url: https://discord.gg/xXKhnyR
   - title: Вікі
     icon: wikipedia-w
     url: https://github.com/nurecraft/vanilla-server/wiki

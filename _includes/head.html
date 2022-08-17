@@ -41,7 +41,7 @@
     }, false);
 
     function getServerStatus(serverName) {
-        fetch(`https://api.mcsrvstat.us/2/${serverName}.nurecraft.ml`)
+        fetch(`https://api.mcsrvstat.us/2/${serverName}.nure.cf`)
         .then((resp) => resp.json()).then((data) => {
           document.querySelector(`.${serverName}-status`).classList.replace(
             'alert-warning', data.online ? 'alert-success' : 'alert-danger'
@@ -57,7 +57,7 @@
        .catch((error) => console.log(error))
     }
 
-    setInterval(getServerStatus("magictech"), 240000);
+    // setInterval(getServerStatus("magictech"), 240000);
     setInterval(getServerStatus("vanilla"), 240000);
     // setInterval(getServerStatus("anarchy"), 240000);
     </script>
